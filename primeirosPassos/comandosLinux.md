@@ -1,6 +1,6 @@
 ### 🐧 Alguns comandos utilizados durante as aulas.</p>
 
-**Observações:**
+**❗ Observações:**
 
 Os comandos devem ser confirmados com a tecla "Enter" ao final dos comandos.</p>
 Os comandos devem ser obedecidos às suas formas maiúsculas e/ou minúsculas (case sensitive).</p>
