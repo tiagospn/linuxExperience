@@ -103,3 +103,5 @@ Alguns comandos precisam de elevação do usuário root
 * Adicionar um usuário em mais de um grupo existente: `usermod -G grupo1,grupo2 nomeuser`
 * Criando novos grupos: `groupadd nomedoGrupo`
 * Removendo usuário de um grupo: `gpasswd -d nomeusuario nomegrupo`
+* Alterando o dono de um diretórios: `sudo chown nomeusuario:grupo diretorio`
+* Alterando permissão de um diretório: `chmod 
