@@ -1,26 +1,30 @@
-### 🐧 Alguns comandos utilizados durante as aulas.</p>
+## 🐧 Comandos utilizados no decorrer das aulas "Primeiros passos com o Linux".
+
 
 **❗ Observações:**
 
-Os comandos devem ser confirmados com a tecla "Enter" ao final dos comandos.</p>
+Considerar as distribuições DEBIAN/UBUNTU.
+Os comandos devem ser confirmados com a tecla "Enter" ao final da linha.</p>
 Os comandos devem ser obedecidos às suas formas maiúsculas e/ou minúsculas (case sensitive).</p>
-Alguns comandos precisam de elevação do usuário root
+Alguns comandos precisam de elevação do usuário root.</p>
+Alguns comandos podem não funcionar por não estarem instalados em seu sistema. Realize a instalação através do programa "apt".
 
 
 ### 🔥 Sobrevivência
+* Desligar o servidor: `sudo shutdown 0`
 * Obtendo ajuda sobre os comandos do terminal: `nomedocomando --help`
 * Manual sobre os comandos: `man nomedocomando`
   * Dica: Você pode obter ajuda consultando a documentação distribuição Linux no site do desenvolvedor, no nosso caso é o https://help.ubuntu.com
-* Desligar o servidor: `sudo shutdown 0`
 * Interrompendo um script ou comando: Ctrl + c
 * Visualizar arquivo de texto: `cat nome_do_arquivo`
 * Visualizar o status de um serviço: `systemctl status nome_do_serviço`
 * Histórico de comandos utilizados pelo usuário: `history`
 * Tornar um script .sh executavel: `sudo chmod +x arquivo.sh
 * Executar um arquivo .sh: `./arquivo.sh`
-* Executar tarefas com permissão administrativas: Adicione o comando `sudo` antes do comando a ser executado. (Ex.: Criar uma pasta "teste" no diretório raiz: `sudo mkdir teste`
+* Executar tarefas com permissão administrativas: Adicione o comando `sudo` antes do comando que será executado.
 * Limpar graficamente a tela: `clear`
-
+* Realizar download via https/http: `wget linkcompletoDOdownload`
+* Descompactar arquivos .zip: `unzip arquivo.zip`
 
 ### 📰 Editores de texto
 * vi (Editor mais complexo, não indicado para quem está começando) `vi arquivo`
@@ -81,7 +85,7 @@ Alguns comandos precisam de elevação do usuário root
 * Criar usuário temporário: `sudo useradd userconvidado -m -c "Convidado" -s /bin/bash -e dd/mm/aaaa` (Onde dd/mm/aaaa corresponde a data que o acesso irá expirar)
 * Criar ou alterar uma senha para um usuário: `sudo passwd nome_usuario`
 * Trocar entre usuários: `su nome_usuario`
-* Excluir usuário: `sudo userdel -f nomedeusuario` (-f força a exclusão caso o usuário ainda esteja logado no sistema)
+* Excluir usuário: `sudo userdel -r -f nomedeusuario`
 * Criar usuários em lote: (Script para criar vários usuários)
   * Arquivo: `nano criaUsuarios.sh`
   * Conteúdo do arquivo:
@@ -104,4 +108,26 @@ Alguns comandos precisam de elevação do usuário root
 * Criando novos grupos: `groupadd nomedoGrupo`
 * Removendo usuário de um grupo: `gpasswd -d nomeusuario nomegrupo`
 * Alterando o dono de um diretórios: `sudo chown nomeusuario:grupo diretorio`
-* Alterando permissão de um diretório: `chmod 
+* Alterando a permissão de um diretório: `chmod ABC /diretorio` (Onde ABC irá assumir os valores dos atributos para cada usuário respectivamente A-DONO, B-GRUPO C-OUTROS)
+  * Cada atributo tem um valor pré-definido. Utiliza-se os valores de forma isolada ou somando-os para combinar mais de uma permissão.
+ 
+ Atributos   | Valor
+------------ | -----
+Ler (R)      |  4
+Gravar (W)   |  2
+Executar (X) |  1
+Nenhum       |  0
+
+  * Exemplo: `chmod 740 /fotos` - Nesse caso o dono da pasta terá acesso completo (4+2+1), usuários do grupo terão apenas permissão de leitura (4) e os demais não podem acessar a pasta (0).
+
+
+### 📥 Gerenciamento de pacotes
+* Permite gerenciar os pacotes instalados e instalar novos pacotes: `apt`
+  * Listar os pacotes disponíveis: `apt list` 
+  * Listar os pacotes instalados: `apt list --installed`
+  * Verificar novas versões dos pacotes instalados: `apt list --upgradeable`
+  * Buscar por um pacote: `apt search termodebusca`
+  * Instalar um pacote: `apt install nomedopacote`
+  * Desinstalar um pacote: `apt remove nomedopacote`
+  * Editar o repositório de pacotes: `apt edit-sources`
+  * Atualizando o sistema operacional: 
