@@ -84,7 +84,17 @@ Alguns comandos podem não funcionar por não estarem instalados em seu sistema.
 * Criar um ou mais diretórios: `mkdir diretorio_1 diretorio_2 diretorio_n`
 * Excluir um diretório vazio: `rmdir nome_do_diretório`
 * Excluir um diretório não vazio: `rm -rf nome_do_diretório`
+* Alterando a permissão de um diretório: `chmod ABC /diretorio` (Onde ABC irá assumir os valores dos atributos para cada usuário respectivamente A-DONO, B-GRUPO C-OUTROS)
+  * Cada atributo tem um valor pré-definido. Utiliza-se os valores de forma isolada ou somando-os para combinar mais de uma permissão.
+ 
+ Atributos   | Valor
+------------ | -----
+Ler (R)      |  4
+Gravar (W)   |  2
+Executar (X) |  1
+Nenhum       |  0
 
+  * Exemplo: `chmod 740 /fotos` - Nesse caso o dono da pasta terá acesso completo (4+2+1), usuários do grupo terão apenas permissão de leitura (4) e os demais não podem acessar a pasta (0).
 
 ### 👱 Gerenciando usuários
 * Listando os usuários logados: `w` ou `who -a`
@@ -116,17 +126,6 @@ Alguns comandos podem não funcionar por não estarem instalados em seu sistema.
 * Criando novos grupos: `groupadd nomedoGrupo`
 * Removendo usuário de um grupo: `gpasswd -d nomeusuario nomegrupo`
 * Alterando o dono de um diretórios: `sudo chown nomeusuario:grupo diretorio`
-* Alterando a permissão de um diretório: `chmod ABC /diretorio` (Onde ABC irá assumir os valores dos atributos para cada usuário respectivamente A-DONO, B-GRUPO C-OUTROS)
-  * Cada atributo tem um valor pré-definido. Utiliza-se os valores de forma isolada ou somando-os para combinar mais de uma permissão.
- 
- Atributos   | Valor
------------- | -----
-Ler (R)      |  4
-Gravar (W)   |  2
-Executar (X) |  1
-Nenhum       |  0
-
-  * Exemplo: `chmod 740 /fotos` - Nesse caso o dono da pasta terá acesso completo (4+2+1), usuários do grupo terão apenas permissão de leitura (4) e os demais não podem acessar a pasta (0).
 
 
 ### 📥 Gerenciamento de pacotes (Debian e Ubuntu)
