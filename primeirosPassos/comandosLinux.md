@@ -12,21 +12,19 @@ Alguns comandos podem não funcionar por não estarem instalados em seu sistema.
 
 ### 🔥 Sobrevivência
 * Desligar o servidor: `sudo shutdown 0`
+* Executar tarefas com permissão administrativas: Adicione o comando `sudo` antes do comando que será executado.
 * Obtendo ajuda sobre os comandos do terminal: `nomedocomando --help`
 * Manual sobre os comandos: `man nomedocomando`
   * Dica: Você pode obter ajuda consultando a documentação distribuição Linux no site do desenvolvedor, no nosso caso é o https://help.ubuntu.com
 * Interrompendo um script ou comando: Ctrl + c
-* Visualizar arquivo de texto: `cat nome_do_arquivo`
 * Visualizar o status de um serviço: `systemctl status nome_do_serviço`
 * Histórico de comandos utilizados pelo usuário: `history`
-* Tornar um script .sh executavel: `sudo chmod +x arquivo.sh
-* Executar um arquivo .sh: `./arquivo.sh`
-* Executar tarefas com permissão administrativas: Adicione o comando `sudo` antes do comando que será executado.
-* Limpar graficamente a tela: `clear`
+* Limpar graficamente a tela: `clear` ou Ctrl + l
 * Realizar download via https/http: `wget linkcompletoDOdownload`
-* Descompactar arquivos .zip: `unzip arquivo.zip`
 
-### 📰 Editores de texto
+
+### 📰 Edição de texto
+* Visualizar arquivos de texto: `cat nome_do_arquivo`
 * vi (Editor mais complexo, não indicado para quem está começando) `vi arquivo`
   * Modo de edição: i
   * Sair do modo atual: Esc
@@ -36,7 +34,7 @@ Alguns comandos podem não funcionar por não estarem instalados em seu sistema.
 
 
 ### 💻 Rede
-* Listar os IPs da máquina Linux: `ip a`
+* Listar os IPs da máquina Linux: `ip a` ou `ifconfig`
 
 
 ### 🔑 SSH
@@ -60,26 +58,36 @@ Alguns comandos podem não funcionar por não estarem instalados em seu sistema.
 * Exibir o caminho do diretório onde você se encontra: `pwd`
 
 
-
-### 🗄️ Manipulando arquivos e diretórios
-* Criar um arquivo em branco: `sudo touch nome_do_arquivo.xxx` Onde "xxx" é a extensão do arquivo.
-* Criar diretório: `sudo mkdir nome_da_pasta`
-* Criar diretório com nomes espaçados: `mkdir 'Meus documentos'`
-  * Dica: Quando acessar a pasta Meus documentos você terá que colocar as '' (Ex.: `cd 'Meus documentos'`)
-* Criar um ou mais diretórios: `mkdir diretorio_1 diretorio_2 diretorio_n`
-* Excluir um diretório vazio: `rmdir nome_do_diretório`
-* Excluir um arquivo: `rm nome_do_arquivo`
-* Excluir mais de um arquivo com a mesma extensão: `rm *.extensão`
-* Excluir mais de um arquivo com o nome semelhante: `rm nome_do_ar*` (O sistema vai apagar todos os arquivos que se iniciam por "nome_do_ar")
-* Excluir um diretório com arquivos: `rm -rf nome_do_diretório`
-
-
 ### 🔍 Localizando arquivos
 * Listar arquivos ou diretórios iniciados por uma letra ou conjunto de caracteres específicos: `ls sy*` retornará todos os arquivos iniciados pelos caracteres "sy"
 * Buscar por arquivos a partir do diretório onde você se encontra: `find -name nome_do_arquivo` ou `find -name parte_do_nome_do_arquivo*`
 
+### 📋 Manipulando arquivos
+* Criar um arquivo em branco: `sudo touch nome_do_arquivo.xxx` Onde "xxx" é a extensão do arquivo.
+* Excluir um arquivo: `rm nome_do_arquivo`
+* Excluir mais de um arquivo com a mesma extensão: `rm *.extensão`
+* Excluir mais de um arquivo com o nome semelhante: `rm nome_do_ar*` (O sistema vai apagar todos os arquivos que se iniciam por "nome_do_ar")
+* Copiando arquivos: `cp /diretorio/origem/arquivo.txt /diretorio/destino/` (O arquivo.txt será copiado da pasta "origem" para a pasta "destino")
+  * Dicas: Se você estiver dentro do diretório origem não é necessário especificar o caminho completo "/diretorio/origem/". Para copiar vários arquivos que estejam no mesmo diretório, separe-os com espaço.
+* Copiando arquivos com confirmação do usuário: `cp -i /diretorio/origem/arquivo1.txt arquivo2.txt /diretorio/destino/`
+* Movendo arquivos: `mv /diretorio/origem/arquivo.txt /diretorio/destino/`
+* Renomeando arquivos: `mv nomeAntigo.txt nomeNovo.txt`
+* Tornar um arquivo .sh executavel: `sudo chmod +x arquivo.sh
+* Executar um arquivo .sh: `./arquivo.sh`
+* Descompactar arquivos .zip: `unzip arquivo.zip`
+
+### 📁 Manipulando diretórios
+* Criar diretório: `sudo mkdir nome_da_pasta`
+* Criar diretório com nomes compostos: `mkdir 'Meus documentos'`
+  * Dica: Quando acessar a pasta Meus documentos você terá que colocar aspas simples (Ex.: `cd 'Meus documentos'`)
+* Copiando todo o conteúdo de um diretório: `cp -r /diretorio/origem/* /diretorio/destino/`
+* Criar um ou mais diretórios: `mkdir diretorio_1 diretorio_2 diretorio_n`
+* Excluir um diretório vazio: `rmdir nome_do_diretório`
+* Excluir um diretório não vazio: `rm -rf nome_do_diretório`
+
 
 ### 👱 Gerenciando usuários
+* Listando os usuários logados: `w` ou `who -a`
 * Listando os usuários existentes: `cat /etc/passwd`
 * Criar usuário: `sudo useradd nomedeusuario -m -c "Nome completo do usuário" -s /bin/bash` (Prefira utilizar nomes curtos)
 * Criar usuário temporário: `sudo useradd userconvidado -m -c "Convidado" -s /bin/bash -e dd/mm/aaaa` (Onde dd/mm/aaaa corresponde a data que o acesso irá expirar)
@@ -153,3 +161,9 @@ Nenhum       |  0
   * Desmontar a unidade de disco: `umount /dev/sdx`
   * Montar discos automaticamente: `nano /etc/fstab`
     * Adicione uma linha para cada disco que deseja montar: `/dev/sdx /local/demontagem ext4 defaults 0 0`
+
+### 📊 Gerenciando processos do sistema
+* Visualizar processos em execução: `ps aux`
+* Encerrar um processo em execução pela id: `kill id` (id = identificação do processo obtido pelo comando `ps aux`)
+* Encerrar um processo em execução pelo nome: `kilall nomeprocesso`
+* Desconectar um usuário: `kill pim` (pim = identificação do usuário logado no sistema, pode ser obtido pelo comando `who -a`)
