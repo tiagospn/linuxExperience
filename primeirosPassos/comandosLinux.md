@@ -144,3 +144,12 @@ Nenhum       |  0
 
 
 ### 💾 Gerenciamento de discos
+* Visualizando discos e partições do sistema: `lsblk` ou `fdisk -l`
+* Particionando e iniciando um novo disco: `fdisk /dev/sdx` (Substitua o X pela letra correspondente ao disco que você deseja manipular)
+  * Adicionar uma nova partição: `n`
+  * Gravar as alterações: `w`
+  * Formatando o disco: `mkfs.ext4 /dev/sdb`
+  * Montando a unidade de disco: `mount /dev/sdx /local/demontagem` (Por padrão os dispositivos são montados na pasta "mnt")
+  * Desmontar a unidade de disco: `umount /dev/sdx`
+  * Montar discos automaticamente: `nano /etc/fstab`
+    * Adicione uma linha para cada disco que deseja montar: `/dev/sdx /local/demontagem ext4 defaults 0 0`
