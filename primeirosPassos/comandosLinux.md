@@ -1,4 +1,4 @@
-## 🐧 Comandos utilizados no decorrer das aulas "Primeiros passos com o Linux".
+## 🐧 Comandos utilizados durante as aulas: "Primeiros passos com o Linux".
 
 
 **❗ Observações:**
@@ -121,13 +121,26 @@ Nenhum       |  0
   * Exemplo: `chmod 740 /fotos` - Nesse caso o dono da pasta terá acesso completo (4+2+1), usuários do grupo terão apenas permissão de leitura (4) e os demais não podem acessar a pasta (0).
 
 
-### 📥 Gerenciamento de pacotes
-* Permite gerenciar os pacotes instalados e instalar novos pacotes: `apt`
-  * Listar os pacotes disponíveis: `apt list` 
-  * Listar os pacotes instalados: `apt list --installed`
-  * Verificar novas versões dos pacotes instalados: `apt list --upgradeable`
-  * Buscar por um pacote: `apt search termodebusca`
-  * Instalar um pacote: `apt install nomedopacote`
-  * Desinstalar um pacote: `apt remove nomedopacote`
-  * Editar o repositório de pacotes: `apt edit-sources`
-  * Atualizando o sistema operacional: 
+### 📥 Gerenciamento de pacotes (Debian e Ubuntu)
+* Gerenciador de pacotes: `apt`
+* Listar os pacotes disponíveis: `apt list` 
+* Listar os pacotes instalados: `apt list --installed`
+* Verificar novas versões dos pacotes instalados: `apt list --upgradeable`
+* Procurar por um pacote: `apt search termodebusca`
+* Instalar um pacote: `apt install nomedopacote`
+* Desinstalar um pacote: `apt remove nomedopacote`
+* Editar o repositório de pacotes: `apt edit-sources`
+* Atualizando o sistema operacional:
+  * Listando as atualizações disponíveis: `apt update`
+  * Instalando as atualizações disponíveis: `apt upgrade -y`
+
+
+### 📥 Gerenciamento de pacotes (RedHat e Fedora)
+* Gerenciador de pacotes: `yum` ou `dnf`
+* Procurar por um pacote: `dnf search termodebusca`
+* Instalar um pacote: `dnf install nomedopacote`
+* Desinstalar um pacote: `dnf remove nomedopacote`
+* Atualizando o sistema operacional: `dnf update -y`
+
+
+### 💾 Gerenciamento de discos
