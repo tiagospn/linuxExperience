@@ -108,7 +108,7 @@ Nenhum       |  0
   * Arquivo: `nano criaUsuarios.sh`
   * Conteúdo do arquivo:
   ```
-  #!bin/bash
+  #!/bin/bash
   
   echo "Modelo de script que cria 3 usuarios com a senha padrão Senha123 onde a senha irá expirar no primeiro acesso"
   useradd user1 -c "Nome do usuário 1" -s /bin/bash -m -p $(openssl passwd -crypt Senha123)
@@ -123,7 +123,8 @@ Nenhum       |  0
 ### 🧑‍🤝‍🧑 Gerenciando Grupos
 * Listando os grupos existentes: `cat /etc/group`
 * Adicionar um usuário em mais de um grupo existente: `usermod -G grupo1,grupo2 nomeuser`
-* Criando novos grupos: `groupadd nomedoGrupo`
+* Criando um grupo: `groupadd nomedoGrupo`
+* Apagando um grupo: `groupdel nomedogrupo`
 * Removendo usuário de um grupo: `gpasswd -d nomeusuario nomegrupo`
 * Alterando o dono de um diretórios: `sudo chown nomeusuario:grupo diretorio`
 
