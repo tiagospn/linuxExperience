@@ -18,6 +18,8 @@ Alguns comandos podem não funcionar por não estarem instalados em seu sistema.
   * Dica: Você pode obter ajuda consultando a documentação distribuição Linux no site do desenvolvedor, no nosso caso é o https://help.ubuntu.com
 * Interrompendo um script ou comando: Ctrl + c
 * Visualizar o status de um serviço: `systemctl status nome_do_serviço`
+* Reiniciar um serviço: `systemctl restart nome_do_serviço` (Os serviços do tipoa daemon sempre serão terminados com "d". Ex.: smbd, nmbd)
+* Habilitar o serviço para iniciar junto ao sistema: `systemctl enable nome_do_serviço`
 * Histórico de comandos utilizados pelo usuário: `history`
 * Limpar graficamente a tela: `clear` ou Ctrl + l
 * Realizar download via https/http: `wget linkcompletoDOdownload`
@@ -62,6 +64,7 @@ Alguns comandos podem não funcionar por não estarem instalados em seu sistema.
 * Listar arquivos ou diretórios iniciados por uma letra ou conjunto de caracteres específicos: `ls sy*` retornará todos os arquivos iniciados pelos caracteres "sy"
 * Buscar por arquivos a partir do diretório onde você se encontra: `find -name nome_do_arquivo` ou `find -name parte_do_nome_do_arquivo*`
 
+
 ### 📋 Manipulando arquivos
 * Criar um arquivo em branco: `sudo touch nome_do_arquivo.xxx` Onde "xxx" é a extensão do arquivo.
 * Excluir um arquivo: `rm nome_do_arquivo`
@@ -75,6 +78,7 @@ Alguns comandos podem não funcionar por não estarem instalados em seu sistema.
 * Tornar um arquivo .sh executavel: `sudo chmod +x arquivo.sh
 * Executar um arquivo .sh: `./arquivo.sh`
 * Descompactar arquivos .zip: `unzip arquivo.zip`
+
 
 ### 📁 Manipulando diretórios
 * Criar diretório: `sudo mkdir nome_da_pasta`
@@ -95,6 +99,7 @@ Executar (X) |  1
 Nenhum       |  0
 
   * Exemplo: `chmod 740 /fotos` - Nesse caso o dono da pasta terá acesso completo (4+2+1), usuários do grupo terão apenas permissão de leitura (4) e os demais não podem acessar a pasta (0).
+
 
 ### 👱 Gerenciando usuários
 * Listando os usuários logados: `w` ou `who -a`
@@ -161,6 +166,7 @@ Nenhum       |  0
   * Desmontar a unidade de disco: `umount /dev/sdx`
   * Montar discos automaticamente: `nano /etc/fstab`
     * Adicione uma linha para cada disco que deseja montar: `/dev/sdx /local/demontagem ext4 defaults 0 0`
+
 
 ### 📊 Gerenciando processos do sistema
 * Visualizar processos em execução: `ps aux`
