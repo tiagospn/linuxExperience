@@ -2,3 +2,4 @@
 * Gerenciador da máquina virtual: [VirtualBOX](https://www.virtualbox.org/)
 * Subsistema do Windows para sistemas Linux: [WSL](https://docs.microsoft.com/pt-br/windows/wsl/install)
 * Acesso remoto via SSH: [Putty](https://www.chiark.greenend.org.uk/~sgtatham/putty/latest.html)
+* Programa para compartilhamento de arquivos entre sistemas operacionais: [SAMBA](https://www.samba.org)
